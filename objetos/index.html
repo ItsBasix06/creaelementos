@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <p id="display"></p>
+  <p id="display2"></p>
+  <p id="display3" style="border: 2px solid blue;"></p>
+    <script>
+        class Persona {
+        #nombre;
+  constructor(nombre, edad) {
+    this.#nombre = nombre;
+    this.edad = edad;
+  }
+
+  saludar(){
+   // alert(`El es ${this.#nombre} y tiene ${this.edad} años`);
+  }
+  obtenerNombre() {
+    return this.#nombre;
+  }
+
+}
+
+  class Animal {
+    constructor(nombre) {
+      this.nombre = nombre;
+    }
+    hacerSonido(){
+    document.getElementById("display2").textContent += 
+    `${this.nombre} hace un sonido.`
+    } 
+
+  }
+
+class Perro extends Animal {
+  hacerSonido() {
+    document.getElementById("display2").textContent += 
+    `${this.nombre} ladra.`
+  }
+}
+class Gato extends Animal {
+  hacerSonido() {
+    document.getElementById("display2").textContent += 
+    `${this.nombre} Maulla.`
+  }
+}
+miGato = new Gato("kity");
+miGato.hacerSonido();
+
+
+const animales = [new Perro("Rex"), new Gato("Misu")];
+for (a of animales){
+  a.hacerSonido();
+}
+
+class Camion extends Coche {
+  constructor( marca,modelo,año,x,tonelaje){
+    super(marca,modelo,año,kms);
+    this.tonelaje = tonelaje;
+  }
+  cargar(){
+    document.getElementById("display3").textContent = this.modelo + ` Cargando....( ${this.tonelaje}kgs máximo )`
+  }
+  
+}
+
+let miPerro = new Perro("Tobi");
+let tuPerro = new Perro("Sultán")
+miPerro.hacerSonido();
+alert(miPerro.hacerSonido());
+alert(tuPerro.hacerSonido());
+
+    class Coche {
+      #kilometraje;
+        constructor(marca, modelo,año,x){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.año = año;
+            this.#kilometraje = x;
+        }
+        describir(){
+          document.getElementById('display').innerHTML +=
+          this.marca+ " " +this.modelo+ " " +this.año + "kms: "+this.#kilometraje+"<br>";
+        }
+        getKilometraje(){
+            return this.#kilometraje;
+        }
+    }
+    const persona1 = new Persona ("Pepe",22);
+     const maria = new Persona ("Maria",15);
+     persona1.saludar();
+     miCoche = new Coche("Toyota","Prius",2023,100000); 
+     miCoche.describir(); 
+     const tuCoche = new Coche("Seat","Leon",2022,60000);
+     tuCoche.describir(); 
+     const suCoche = new Coche("Fiat","500",2022,15000);
+     suCoche.describir();
+     let miCamion = new Camion("Esania",V23,2023,5000,1000)
+     miCamion.cargar();
+
+    </script>
+</body>
+</html>

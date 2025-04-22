@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cursos = ["1eso","2eso","bach1","bach2"];
+      //  cursos.splice(1,2);
+        //  cursos.sort();
+        //    cursos.forEach(c=>alert(c))
+        alumnos = [
+            {nombre:"juan",edad:18},
+            {nombre:"maria",edad:23},
+            {nombre:"pepe",edad:15},
+            {nombre:"manuel",edad:17}
+        ]
+        let alumnosMayores = alumnos.filter(alumno=>alumno.edad>17)
+        alumnosMayores.forEach(element =>  alert(element.nombre));
+    </script>
+</body>
+</html>
